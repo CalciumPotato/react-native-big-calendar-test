@@ -173,7 +173,7 @@ function _CalendarBodyForMonthView<T extends ICalendarEventBase>({
       let tmpDay: dayjs.Dayjs = day.startOf('week')
       //re-sort events from the start of week until the calendar cell date
       //optimize sorting of event nodes and make sure that no empty gaps are left on top of calendar cell
-      while (!tmpDay.isAfter(day)) {
+      while (!tmpDay.isAfter(day, 'day')) {
         for (const event of filteredEvents) {
           if (dayjs(event.end).isBefore(tmpDay.startOf('day'))) {
             const eventToMoveUp = filteredEvents.find((e) =>
