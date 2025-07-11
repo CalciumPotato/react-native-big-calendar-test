@@ -20,7 +20,7 @@
     "prepublish": "bun run build",
     "build": "bun run build:clean && bun run build:ts",
     "build:clean": "rimraf build/",
-    "build:ts": "env NODE_ENV=production rollup -c"
+    "build:ts": "cross-env NODE_ENV=production rollup -c"
   },
   "dependencies": {
     "calendarize": "^1.1.1",
